@@ -19,3 +19,10 @@ export const getTopRated = () => {
     return get(`/movie/top_rated?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&region=US&page=1`)
 }
 
+const exports = {
+    getPopular,
+    getNowPlaying,
+    getTopRated,
+}
+
+export default exports
