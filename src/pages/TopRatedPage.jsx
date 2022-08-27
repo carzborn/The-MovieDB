@@ -3,7 +3,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import useTopRated from '../hooks/useTopRated'
 
-const HomePage = () => {
+const TopRatedPage = () => {
 
      const {data, isSuccess, isError, error} = useTopRated()
 
