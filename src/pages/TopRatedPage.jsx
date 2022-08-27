@@ -1,11 +1,24 @@
+
+import React from 'react'
 import Container from 'react-bootstrap/Container'
+import useTopRated from '../hooks/useTopRated'
 
 const HomePage = () => {
-	return (
-		<Container className="py-3">
-			<h1>Welcome!</h1>
-		</Container>
-	)
+
+     const {data, isSuccess, isError, error} = useTopRated()
+
+    return (
+        <Container>
+            <div>
+                <h2>Popular Movies</h2>
+                {isSuccess && data.results.map((movie,id) => (
+                    <ul>
+                        <li key={id}>{movie.title}</li>
+                    </ul>
+                ))}
+            </div>
+        </Container>
+  )
 }
 
-export default HomePage
+export default TopRatedPage
