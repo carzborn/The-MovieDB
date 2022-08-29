@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import Navigation from './components/Navigation'
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
@@ -6,6 +7,7 @@ import NowPlayingPage from './pages/NowPlayingPage'
 import PopularPage from './pages/PopularPage'
 import TopRatedPage from './pages/TopRatedPage'
 import './assets/scss/App.scss'
+import SingleMoviePage from './pages/SingleMoviePage'
 
 function App() {
 	return (
@@ -17,8 +19,11 @@ function App() {
 				<Route path="/now_playing" element={<NowPlayingPage />} />
 				<Route path="/popular" element={<PopularPage />} />
 				<Route path="/top_rated" element={<TopRatedPage />} />
+				<Route path="/movie/:id" element={<SingleMoviePage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
+
+			<ReactQueryDevtools/>
 		</div>
 	)
 }

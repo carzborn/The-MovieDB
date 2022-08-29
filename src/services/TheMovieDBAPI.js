@@ -11,7 +11,11 @@ const get = async (endpoint) => {
 
 // Get a single movie
 const getMovie = async (id) => {
-	return get(`/movie/${id}?api_key=${API_KEY}&region=US`)
+	return get(`/movie/${id}?api_key=${API_KEY}&region=US&append_to_response=credits`)
+}
+
+const getActor = async (id) => {
+    return get(`/person/${id}?api_key=${api_key}&language=en-US&append_to_response=movie_credits`)
 }
 
 // Get the most popular movies
@@ -31,6 +35,7 @@ export const getTopRated = async () => {
 
 const exports = {
     getMovie,
+    getActor,
     getPopular,
     getNowPlaying, 
     getTopRated,
