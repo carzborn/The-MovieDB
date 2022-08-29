@@ -1,4 +1,4 @@
-// Query that gets a specific movie
+// Query for a specific movie
 
 import {useQuery} from "react-query";
 import TheMovieDBAPI from '../services/TheMovieDBAPI'
