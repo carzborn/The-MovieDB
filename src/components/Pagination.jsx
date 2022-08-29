@@ -5,7 +5,7 @@ const Pagination = ({page, totalPages, onChangePage}) => {
       <div className="d-flex align-items-center justify-content-between">
           
           <Button 
-            variant='dark'
+            variant='primary'
             disabled={page -1 === 0}
             onClick={() => onChangePage({page: Number(page) - 1}) }
           >Previous</Button>
@@ -13,7 +13,7 @@ const Pagination = ({page, totalPages, onChangePage}) => {
           <span>{page}/{totalPages}</span>
 
           <Button 
-            variant='dark'
+            variant='primary'
             disabled={page >= totalPages }
             onClick={() => onChangePage({page: Number(page) + 1}) }
           >Next</Button>

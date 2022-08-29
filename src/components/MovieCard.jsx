@@ -1,7 +1,10 @@
+// Movie Card component
+import {Link} from 'react-router-dom'; 
+
+// Bootstrap imports
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-import {Link} from 'react-router-dom'; 
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w500'
 

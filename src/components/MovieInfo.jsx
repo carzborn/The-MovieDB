@@ -1,12 +1,14 @@
+// Movie Info Component
+import { Link } from "react-router-dom"
+
+// Bootstrap Imports
 import Container from "react-bootstrap/Container"
 import Card from "react-bootstrap/Card"
+import Button from "react-bootstrap/Button"
 import ListGroup from "react-bootstrap/ListGroup"
 import Col from "react-bootstrap/esm/Col"
 import Row from "react-bootstrap/esm/Row"
-import Image from "react-bootstrap/Image"
-import Button from "react-bootstrap/Button"
 import Table from "react-bootstrap/Table"
-import { Link } from "react-router-dom"
 
 const MovieInfo = ({ movie }) => {
     const ImgBaseUrl = 'https://image.tmdb.org/t/p/w500'
@@ -17,7 +19,7 @@ const MovieInfo = ({ movie }) => {
 
             <Row>
                 <Col>
-                    <img src={ImgBaseUrl + movie.poster_path} alt='movie poster' className='poster'></img>
+                    <img src={ImgBaseUrl + movie.poster_path} alt='movie poster' className='poster img-fluid'></img>
                 </Col>
 
                 <Col>
@@ -39,9 +41,9 @@ const MovieInfo = ({ movie }) => {
                                 {movie.credits.cast.map((actor) =>(
                                     <tr key={actor.id}>
                                         <td>
-                                            <a className="text-decoration-none"href={`/actor/${actor.id}`} as={Link}>{actor.name}</a>
+                                            <Button className="text-decoration-none" to={`/actor/${actor.id}`} as={Link}>{actor.name}</Button>
                                         </td>
-                                        <td><p>as</p></td>
+                                        <td>as</td>
                                         <td>{actor.character}</td>
                                     </tr>
                                 ))}

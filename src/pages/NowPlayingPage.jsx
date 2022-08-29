@@ -3,6 +3,7 @@ import useNowPlaying from '../hooks/useNowPlaying'
 import MovieCard from '../components/MovieCard'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import WarningAlert from '../components/alerts/WarningAlert'
 
 const NowPlayingPage = () => {
 
@@ -10,16 +11,18 @@ const NowPlayingPage = () => {
 	return (
 
         <Container className="py-3 text-center">
-            <div>
-                <h2>Movies Playing In Cinemas</h2>
-                <Row lg={3} md={4} sm={6}>
-                    {isSuccess && data.results.map((movie,id) => (
-                        <Col>
-                            <MovieCard movie={movie} id={id} />
-                        </Col>
-                    ))}
-                </Row>
-            </div>
+
+            <h2>Movies Playing In Cinemas</h2>
+            {isError && <WarningAlert message={error.message}/>}
+
+            <Row lg={3} md={4} sm={6}>
+                {isSuccess && data.results.map((movie,id) => (
+                    <Col>
+                        <MovieCard movie={movie} id={id} />
+                    </Col>
+                ))}
+            </Row>
+
         </Container>
 	)
 }
