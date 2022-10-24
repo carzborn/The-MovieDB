@@ -11,12 +11,11 @@ const imgBaseUrl = 'https://image.tmdb.org/t/p/w500'
 const MovieCard = ({movie}) => {
 
     return (
-        <Container>
-                    
             <Card className='m-3'>
                 <Card.Img variant='top' src={imgBaseUrl + movie.poster_path} ></Card.Img>
                 <Card.Body>
                     <Card.Title>{movie.title}</Card.Title>
+                    <Card.Text className="d-flex justify-content-between">
                     <Button 
                         variant='primary' 
                         size='sm' 
@@ -25,10 +24,10 @@ const MovieCard = ({movie}) => {
                         >
                        Read More
                     </Button>
+                    </Card.Text>
+                    
                 </Card.Body>
             </Card>
-            
-        </Container>
     )
 }
 

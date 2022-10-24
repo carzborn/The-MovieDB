@@ -27,9 +27,9 @@ return (
 
         {isSuccess && (
             <>
-                <Row  lg={3} md={4} sm={6}>
+                <Row>
                     {data.results.map((movie,id) =>(
-                        <Col>
+                        <Col lg={4} md={3} sm={2}>
                             <MovieCard movie={movie} key={id}/>
                         </Col>
                     ))}

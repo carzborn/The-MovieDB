@@ -11,13 +11,13 @@ const PopularPage = () => {
     const {data, isSuccess, isError, error} = usePopular()
 	return (
 
-        <Container className="py-3 text-center">
+        <Container className=" text-center">
 
             <h2>Popular Movies</h2>
             {isError && <WarningAlert message={error.message}/>}
-            <Row lg={3} md={4} sm={6}>
+            <Row>
                 {isSuccess && data.results.map((movie,id) => (
-                    <Col>
+                    <Col lg={4} md={3} sm={2}>
                         <MovieCard movie={movie} id={id} />
                     </Col>
                 ))}
