@@ -15,9 +15,9 @@ const NowPlayingPage = () => {
             <h2>Movies Playing In Cinemas</h2>
             {isError && <WarningAlert message={error.message}/>}
 
-            <Row>
+            <Row lg={4} md={3} sm={2}>
                 {isSuccess && data.results.map((movie,id) => (
-                    <Col lg={4} md={3} sm={2}>
+                    <Col>
                         <MovieCard movie={movie} id={id} />
                     </Col>
                 ))}
