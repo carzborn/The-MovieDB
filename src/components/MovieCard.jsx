@@ -15,7 +15,7 @@ const MovieCard = ({movie}) => {
                 <Card.Img variant='top' src={imgBaseUrl + movie.poster_path} ></Card.Img>
                 <Card.Body>
                     <Card.Title>{movie.title}</Card.Title>
-                    <Card.Text className="d-flex justify-content-between">
+                    <Card.Text className="d-flex justify-content-center">
                     <Button 
                         variant='primary' 
                         size='sm' 
